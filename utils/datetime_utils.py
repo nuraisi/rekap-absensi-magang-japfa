@@ -51,7 +51,7 @@ def parse_time_flexible(val):
 def clean_and_normalize(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
-    # --- rapikan nama kolom ---
+    # rapikan nama kolom
     df.columns = [str(c).strip() for c in df.columns]
 
     rename_map = {
@@ -76,7 +76,7 @@ def clean_and_normalize(df: pd.DataFrame) -> pd.DataFrame:
     if missing:
         raise ValueError(f"Kolom wajib tidak ditemukan: {missing}")
 
-    # --- parsing ---
+    # parsing
     df["Tanggal"] = df["Tanggal"].apply(parse_date_flexible)
 
     if "Waktu" in df.columns:
@@ -84,11 +84,12 @@ def clean_and_normalize(df: pd.DataFrame) -> pd.DataFrame:
     else:
         df["Waktu"] = None
 
-    # --- normalisasi teks ---
+    # normalisasi teks
     df["Nama"] = df["Nama"].astype(str).str.strip().str.upper()
     df["Departemen"] = df["Departemen"].astype(str).str.strip().str.upper()
 
-    # --- drop data rusak ---
+    # drop data rusak
     df = df.dropna(subset=[ "Nama", "Departemen", "Tanggal"])
 
     return df
+
