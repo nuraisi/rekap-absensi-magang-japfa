@@ -56,7 +56,7 @@ def validate_master(
     master_df.columns = master_df.columns.str.strip()
 
     # ======================
-    # DETEKSI KOLOM (AMAN)
+    # DETEKSI KOLOM
     # ======================
     name_col = next(
         (c for c in master_df.columns if c.upper() == "NAMA"),
@@ -84,7 +84,7 @@ def validate_master(
     master_norm["Departemen"] = master_df[dept_col].astype(str).str.strip()
 
     # ======================
-    # OPTIONAL: CEK NAMA FILE
+    # CEK NAMA FILE
     # ======================
     if filename:
         match = re.search(r"(\d+)-(\d+)", filename)
@@ -94,3 +94,4 @@ def validate_master(
             )
 
     return master_norm, warnings
+
