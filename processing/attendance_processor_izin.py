@@ -133,12 +133,6 @@ def process_attendance_izin(df_raw: pd.DataFrame):
     )
 
     # ======================
-    # FORMAT UNTUK PDF
-    # ======================
-    df["Tanggal Mulai Izin"] = df["Tanggal Mulai Izin"].dt.strftime("%d-%m-%Y")
-    df["Tanggal Akhir Izin"] = df["Tanggal Akhir Izin"].dt.strftime("%d-%m-%Y")
-
-    # ======================
     # FINAL RESULT
     # ======================
     final_result = df[
@@ -155,3 +149,4 @@ def process_attendance_izin(df_raw: pd.DataFrame):
     rekap = df.copy()
 
     return final_result, rekap
+
