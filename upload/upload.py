@@ -28,7 +28,7 @@ def read_any_csv(uploaded_file):
             engine="python"
         )
 
-    # 🔥 PASTIKAN No.Akun STRING
+    # No.Akun STRING
     if "No.Akun" in df.columns:
         df["No.Akun"] = df["No.Akun"].astype(str).str.strip()
 
@@ -41,7 +41,7 @@ def read_any_csv(uploaded_file):
 def read_excel_file(uploaded_file):
     df = pd.read_excel(uploaded_file)
 
-    # 🔥 PASTIKAN No.Akun STRING
+    # No.Akun STRING
     if "No.Akun" in df.columns:
         df["No.Akun"] = df["No.Akun"].astype(str).str.strip()
 
@@ -74,5 +74,6 @@ def upload_file():
             return None
 
         return df
+
 
     return None
