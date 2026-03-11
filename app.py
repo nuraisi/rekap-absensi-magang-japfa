@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 from pathlib import Path
 import pandas as pd
@@ -164,3 +163,4 @@ with col2:
         download_izin(
             final_izin=final_izin
         )
+
