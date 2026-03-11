@@ -74,16 +74,16 @@ def process_attendance_absen(
     df["Tanggal"] = pd.to_datetime(
         df["Tanggal"],
         errors="coerce",
-        dayfirst=True   # 🔥 penting karena format kamu 09/02/2026
+        dayfirst=True   # karena format 09/02/2026
     )
 
     if df["Tanggal"].isna().all():
         raise ValueError("Semua nilai tanggal tidak valid.")
 
-    # 🔥 pastikan benar-benar datetime dulu
+    # pastikan benar-benar datetime dulu
     df = df.dropna(subset=["Tanggal"])
 
-    # 🔥 baru boleh pakai .dt
+    # baru boleh pakai .dt
     df["Tanggal"] = df["Tanggal"].dt.normalize()  # buang jam jadi 00:00:00
     df["Hari"] = df["Tanggal"].dt.day
 
@@ -148,7 +148,7 @@ def process_attendance_absen(
     )
 
     # ======================
-    # POTONGAN & BONUS FINAL (ANTI DOUBLE PER HARI)
+    # POTONGAN & BONUS FINAL (TIDAK DOUBLE PER HARI)
     # ======================
 
     # Normalisasi Telat
@@ -204,7 +204,7 @@ def process_attendance_absen(
     df.loc[telat & kurang_jam, "Potongan_Flag"] = 1
 
     # ======================
-    # ANTI DOUBLE PER HARI
+    # TIDAK DOUBLE PER HARI
     # ======================
 
     bonus_per_hari = (
@@ -268,8 +268,9 @@ def process_attendance_absen(
     ]
 
     # ======================
-    # REKAP SEDERHANA
+    # REKAP
     # ======================
     rekap = hadir.copy()
+
 
     return final_result, rekap
