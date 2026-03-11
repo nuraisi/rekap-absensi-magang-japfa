@@ -3,7 +3,7 @@ import re
 
 
 # ======================================================
-# PARSER TANGGAL BAHASA INDONESIA (STABIL)
+# PARSER TANGGAL BAHASA INDONESIA
 # ======================================================
 def parse_tanggal_indo(series: pd.Series) -> pd.Series:
     bulan_map = {
@@ -25,7 +25,7 @@ def parse_tanggal_indo(series: pd.Series) -> pd.Series:
         if pd.isna(val):
             return pd.NaT
 
-        # Jika sudah datetime (Excel kadang sudah benar)
+        # Jika sudah datetime
         if isinstance(val, pd.Timestamp):
             return val
 
@@ -38,14 +38,14 @@ def parse_tanggal_indo(series: pd.Series) -> pd.Series:
         return pd.to_datetime(
             s,
             errors="coerce",
-            dayfirst=True   # PENTING: format Indonesia
+            dayfirst=True   # : format Indonesia
         )
 
     return series.apply(convert)
 
 
 # ======================================================
-# PROCESSOR IZIN (FINAL STABIL)
+# PROCESSOR IZIN
 # ======================================================
 def process_attendance_izin(df_raw: pd.DataFrame):
 
@@ -149,4 +149,5 @@ def process_attendance_izin(df_raw: pd.DataFrame):
     rekap = df.copy()
 
     return final_result, rekap
+
 
