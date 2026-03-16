@@ -161,6 +161,7 @@ with col2:
     if final_izin is not None and not final_izin.empty:
 
         download_izin(
-            final_izin=final_izin
+            final_izin=final_izin,
+            filename_absen=filename_absen
         )
 
