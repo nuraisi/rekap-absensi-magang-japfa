@@ -40,7 +40,7 @@ def download_absen(final_absen, final_izin, filename_absen):
     st.download_button(
         label="📊 Unduh Rekap Absensi (Excel)",
         data=excel_file,
-        file_name=f"{nama_tanpa_ext}.xlsx",
+        file_name=f"{nama_tanpa_ext} (Sistem).xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
@@ -48,7 +48,7 @@ def download_absen(final_absen, final_izin, filename_absen):
 # ======================
 # DOWNLOAD REKAP IZIN
 # ======================
-def download_izin(final_izin: pd.DataFrame):
+def download_izin(final_izin: pd.DataFrame, filename_absen):
 
     if final_izin is None or final_izin.empty:
         return
@@ -71,11 +71,15 @@ def download_izin(final_izin: pd.DataFrame):
 
     df = df[expected_cols]
 
+    # ambil nama file tanpa path dan tanpa extension
+    base_name = os.path.basename(filename_absen)
+    nama_tanpa_ext = os.path.splitext(base_name)[0]
+
     excel_file = export_excel_izin(df)
 
     st.download_button(
         label="📄 Unduh Rekap Izin (Excel)",
         data=excel_file,
-        file_name="Rekap_Izin.xlsx",
+        file_name=f"{nama_tanpa_ext} (Sistem).xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
