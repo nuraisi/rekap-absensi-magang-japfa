@@ -44,7 +44,7 @@ def hero_section():
                     <li>Setelah menerima file dari Bu April, salin seluruh data ke file baru karena file asli diproteksi sehingga tidak dapat diedit.</li>
                     <li>Pastikan kolom <b>Departemen</b> telah disesuaikan dengan departemen masing-masing.</li>
                     <li>Pastikan kolom <b>Telat</b> telah dibersihkan kemudian isi dengan angka <b>1</b>.</li>
-                    <li>Format penamaan file wajib mengikuti ketentuan berikut.</li>
+                    <li>Format penamaan file wajib mengikuti ketentuan berikut. (Contoh : Rekap_Absensi_Februari 9-14)</li>
                 </ul>
             </div>
         </div>
