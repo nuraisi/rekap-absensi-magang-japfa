@@ -42,9 +42,9 @@ def hero_section():
             <div class="card-desc">
                 <ul style="text-align:left; padding-left:20px; margin:0;">
                     <li>Setelah menerima file dari Bu April, salin seluruh data ke file baru karena file asli diproteksi sehingga tidak dapat diedit.</li>
-                    <li>Pastikan kolom <b>Departemen</b> telah disesuaikan dengan departemen masing-masing.</li>
-                    <li>Pastikan kolom <b>Telat</b> telah dibersihkan kemudian isi dengan angka <b>1</b>.</li>
-                    <li>Format penamaan file wajib mengikuti ketentuan berikut. (Contoh : Rekap_Absensi_Februari 9-14)</li>
+                    <li>Pastikan kolom <b>Departemen</b> telah disesuaikan dengan departemen masing-masing (Contoh : HSE, HR&GA, CCU).</li>
+                    <li>Pastikan kolom <b>Telat</b> telah dibersihkan kemudian isi dengan angka <b>1</b> untuk mahasiswa/siswa yang terlambar tanpa keterangan sesuai dengan tanggal keterlambatannya.</li>
+                    <li>Format penamaan file wajib mengikuti ketentuan berikut : Rekap_Absensi_Bulan Tanggal (Contoh : Rekap_Absensi_Februari 9-14), dengan menyesuaikan bulan dan rentang tanggal sesuai periode rekap.</li>
                 </ul>
             </div>
         </div>
@@ -56,10 +56,10 @@ def hero_section():
             <div class="card-title">❗Ketentuan File Izin</div>
             <div class="card-desc">
                 <ul style="text-align:left; padding-left:20px; margin:0;">
-                    <li>Jika mahasiswa tidak mengisi tanggal Akhir Izin biarkan kosong.</li>
-                    <li>Format penulisan tanggal harus dd/mm/yyyy.</li>
-                    <li>Penulisan departemen tidak diperbolehkan menggunakan spasi. (Contoh : HR&GA, Silo&Dryer, bukan HR & GA, Silo & Dryer)</li>
-                    <li>Format penamaan file wajib mengikuti ketentuan berikut. (Contoh : Rekap_Izin_Februari 9-14)</li>
+                    <li>Jika mahasiswa/siswa tidak mengisi kolom Tanggal Akhir Izin, biarkan kosong karena sistem akan mengolahnya secara otomatis.</li>
+                    <li>Format penulisan tanggal harus menggunakan urutan (dd/mm/yyyy).</li>
+                    <li>Penulisan isi pada kolom Departemen tidak diperbolehkan menggunakan spasi. (Contoh : HR&GA, Silo&Dryer, bukan HR & GA, Silo & Dryer)</li>
+                    <li>Format penamaan file wajib mengikuti ketentuan berikut: Rekap_Izin_Bulan Tanggal (Contoh : Rekap_Izin_Februari 9-14), dengan menyesuaikan bulan dan rentang tanggal sesuai periode izin</li>
                 </ul>
             </div>
         </div>
