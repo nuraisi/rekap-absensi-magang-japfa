@@ -71,8 +71,11 @@ def download_izin(final_izin: pd.DataFrame, filename_absen):
 
     df = df[expected_cols]
 
-    base_name = os.path.basename(filename_absen)
-    nama_tanpa_ext = os.path.splitext(base_name)[0]
+    if filename_absen:
+        base_name = os.path.basename(filename_absen)
+        nama_tanpa_ext = os.path.splitext(base_name)[0]
+    else:
+        nama_tanpa_ext = "Rekap_Izin"
 
     excel_file = export_excel_izin(df)
 
