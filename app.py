@@ -72,7 +72,7 @@ def read_file(uploaded_file):
     if uploaded_file.name.lower().endswith(".csv"):
         return read_any_csv(uploaded_file)
 
-    return pd.read_excel(uploaded_file)
+    return pd.read_excel(uploaded_file, dtype=str)
 
 
 # ======================
