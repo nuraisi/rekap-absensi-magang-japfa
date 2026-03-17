@@ -51,11 +51,16 @@ def export_excel_izin(df_izin):
     ws.page_setup.fitToHeight = False
     ws.page_setup.orientation = ws.ORIENTATION_PORTRAIT
 
+    ws.page_margins.top = 0.4
+    ws.page_margins.bottom = 0.5
+    ws.page_margins.left = 0.6
+    ws.page_margins.right = 0.4
+
     # ======================
     # STYLE
     # ======================
-    header_font = Font(bold=True, size=8)
-    small_font = Font(size=7)
+    header_font = Font(bold=True, size=10)
+    small_font = Font(size=9)
 
     center = Alignment(horizontal="center")
 
@@ -183,7 +188,7 @@ def export_excel_izin(df_izin):
     # ======================
     # WIDTH KOLOM
     # ======================
-    widths = [4, 20, 15, 15, 25]
+    widths = [4, 20, 16, 16, 27]
 
     for i, w in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(i)].width = w
