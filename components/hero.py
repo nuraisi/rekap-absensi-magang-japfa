@@ -58,7 +58,7 @@ def hero_section():
                 <ul style="text-align:left; padding-left:20px; margin:0;">
                     <li>Jika mahasiswa tidak mengisi tanggal Akhir Izin biarkan kosong.</li>
                     <li>Format penulisan tanggal harus dd/mm/yyyy.</li>
-                    <li>Penulisan departemen tidak diperbolehkan menggunakan spasi. (Contoh : HR&GA, Silo&Dryer, bukan HR & GA, Silo & Dryer</li>
+                    <li>Penulisan departemen tidak diperbolehkan menggunakan spasi. (Contoh : HR&GA, Silo&Dryer, bukan HR & GA, Silo & Dryer)</li>
                     <li>Format penamaan file wajib mengikuti ketentuan berikut. (Contoh : Rekap_Izin_Februari 9-14)</li>
                 </ul>
             </div>
