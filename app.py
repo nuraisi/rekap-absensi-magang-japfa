@@ -1,3 +1,4 @@
+# app.py
 import streamlit as st
 from pathlib import Path
 import pandas as pd
@@ -99,12 +100,15 @@ if file_absen is not None:
 # PROCESS FILE IZIN
 # ======================
 final_izin = None
+filename_izin = None
 
 if file_izin is not None:
 
     try:
 
         df_izin_raw = read_file(file_izin)
+
+        filename_izin = file_izin.name
 
         final_izin, _ = process_attendance_izin(
             df_izin_raw
@@ -114,7 +118,6 @@ if file_izin is not None:
 
         st.error(f"Gagal memproses file izin: {e}")
         st.stop()
-
 
 # ======================
 # VALIDASI DATA
@@ -162,6 +165,5 @@ with col2:
 
         download_izin(
             final_izin=final_izin,
-            filename_absen=filename_absen
+            filename_absen=filename_izin
         )
-
