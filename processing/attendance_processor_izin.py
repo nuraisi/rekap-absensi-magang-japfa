@@ -51,6 +51,17 @@ def process_attendance_izin(df_raw: pd.DataFrame):
 
     df = df_raw.copy()
 
+    # Normalisasi nama
+    df["Nama"] = df["Nama"].astype(str).str.strip().str.title()
+
+    df["Nama"] = (
+        df["Nama"]
+        .astype(str)
+        .str.strip()
+        .str.replace(r"\s+", " ", regex=True)
+        .str.title()
+    )
+
     # ======================
     # VALIDASI KOLOM WAJIB
     # ======================
